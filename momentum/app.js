@@ -1,17 +1,27 @@
-const player = {
-  name: "Ryu",
-  points: 12,
-  smart: false,
-};
+function sayHello(nameOfPerson, age) {
+  console.log("Hello! My name is", nameOfPerson);
+  console.log("I'm", age, "years old.");
+}
 
-console.log(player);
-console.log(player.points);
-player.points = player.points + 25;
-console.log(player["name"]);
-console.log(player.points);
+sayHello("ryu", 25);
 
-player.smart = true;
-console.log(player);
+sayHello("under", 17);
 
-player.lastName = "potato";
-console.log(player);
+sayHello("ground", 38);
+
+function junction(a, b) {
+  console.log(a, b);
+}
+junction();
+// 결과: undefined undefined //
+
+function plus(a, b) {
+  console.log(a + b);
+}
+// a,b에 아무 값도 안 주면 NaN //
+plus(3, 50);
+
+function divide(a, b) {
+  console.log(a / b);
+}
+divide(50, 25);
