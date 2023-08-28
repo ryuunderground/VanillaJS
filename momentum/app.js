@@ -1,27 +1,12 @@
-function sayHello(nameOfPerson, age) {
-  console.log("Hello! My name is", nameOfPerson);
-  console.log("I'm", age, "years old.");
-}
+const player = {
+  name: "ryu",
+  age: 25,
+  smart: true,
+  sayHello: function (otherPersonsName) {
+    console.log("Hello! " + otherPersonsName);
+  },
+};
 
-sayHello("ryu", 25);
-
-sayHello("under", 17);
-
-sayHello("ground", 38);
-
-function junction(a, b) {
-  console.log(a, b);
-}
-junction();
-// 결과: undefined undefined //
-
-function plus(a, b) {
-  console.log(a + b);
-}
-// a,b에 아무 값도 안 주면 NaN //
-plus(3, 50);
-
-function divide(a, b) {
-  console.log(a / b);
-}
-divide(50, 25);
+console.log(player.name);
+player.sayHello("underground");
+player.sayHello("Hong");
