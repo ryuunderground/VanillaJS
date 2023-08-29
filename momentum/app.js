@@ -1,12 +1,6 @@
-const player = {
-  name: "ryu",
-  age: 25,
-  smart: true,
-  sayHello: function (otherPersonsName) {
-    console.log("Hello! " + otherPersonsName);
-  },
-};
+const a = ["text", "call", 1234];
 
-console.log(player.name);
-player.sayHello("underground");
-player.sayHello("Hong");
+console.log(a);
+a[1] = "movie";
+console.log(a);
+// array 내부 요소 교체 //
