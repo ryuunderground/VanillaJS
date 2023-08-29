@@ -23,3 +23,7 @@ const divideEx = calaulator.divide(5, 10);
 const powerEx = calaulator.power(5, 10);
 
 console.log(addEx, minusEx, timesEx, divideEx, powerEx);
+
+const sth = calaulator.power(2, 3);
+const xtf = calaulator.times(sth, 5);
+console.log(xtf);
