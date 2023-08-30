@@ -11,6 +11,6 @@ if (isNaN(age) || age < 0) {
   console.log("U may but U'd better not drink......");
 } else if (age === 100) {
   console.log("Really?");
-} else if (age === 100) {
+} else if (age > 80) {
   console.log("Do whatever u want");
 }
