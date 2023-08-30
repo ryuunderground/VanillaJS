@@ -1,29 +1,10 @@
-const calaulator = {
-  add: function (a, b) {
-    return a + b;
-  },
-  minus: function (a, b) {
-    return a - b;
-  },
-  times: function (a, b) {
-    return a * b;
-  },
-  divide: function (a, b) {
-    return a / b;
-  },
-  power: function (a, b) {
-    return a ** b;
-  },
-};
+const age = prompt("How old r u?");
+// prompt 단점, 일부 브라우저 지원 안 함, CSS 적용 X //
 
-const addEx = calaulator.add(5, 10);
-const minusEx = calaulator.minus(5, 10);
-const timesEx = calaulator.times(5, 10);
-const divideEx = calaulator.divide(5, 10);
-const powerEx = calaulator.power(5, 10);
-
-console.log(addEx, minusEx, timesEx, divideEx, powerEx);
-
-const sth = calaulator.power(2, 3);
-const xtf = calaulator.times(sth, 5);
-console.log(xtf);
+/* parseInt(age);
+  string --> number 
+  글자는 무시하고 해당 지점 까지의 정수값 리턴
+  213asd = 213
+  sad567 = NaN(Not a number) */
+console.log(parseInt(age));
+// prompt 캔슬 시 값: null //
