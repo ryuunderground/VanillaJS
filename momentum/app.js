@@ -1,18 +1,10 @@
 const loginForm = document.querySelector("#login-form");
-const loginInput = loginForm.querySelector("input");
-const loginButton = loginForm.querySelector("button");
-/*  const loginInput = document.querySelector("#login-form input");
-    const loginButton = document.querySelector("#login-form button");
-                                                            도 가능 */
+const loginInput = loginForm.querySelector("#login-form input");
 
-function onLoginBtnClick() {
+function onLoginSubmit(event) {
+  event.preventDefault();
   const username = loginInput.value;
-  // html이 해줌 //
-  /* if (username === "") {
-    alert("Plz write ur name");
-  } else if (username.length > 15) {
-    alert("Ur name is too long");
-  } */
+  console.log(username);
 }
 
-loginButton.addEventListener("click", onLoginBtnClick);
+loginForm.addEventListener("submit", onLoginSubmit);
