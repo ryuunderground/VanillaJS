@@ -1,13 +1,18 @@
-const h1 = document.querySelector("div h1");
+const loginForm = document.querySelector("#login-form");
+const loginInput = loginForm.querySelector("input");
+const loginButton = loginForm.querySelector("button");
+/*  const loginInput = document.querySelector("#login-form input");
+    const loginButton = document.querySelector("#login-form button");
+                                                            도 가능 */
 
-function handleTitleClick() {
-  const clickedClass = "clicked";
-  h1.classList.toggle(clickedClass);
-  /* if (h1.classList.contains(clickedClass)) {
-    h1.classList.remove(clickedClass);
-  } else {
-    h1.classList.add(clickedClass);
+function onLoginBtnClick() {
+  const username = loginInput.value;
+  // html이 해줌 //
+  /* if (username === "") {
+    alert("Plz write ur name");
+  } else if (username.length > 15) {
+    alert("Ur name is too long");
   } */
 }
 
-h1.addEventListener("click", handleTitleClick);
+loginButton.addEventListener("click", onLoginBtnClick);
