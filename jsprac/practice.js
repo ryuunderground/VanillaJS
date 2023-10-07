@@ -1,27 +1,34 @@
-const colors = ["#1abc9c", "#3498db", "#9b59b6", "#f39c12", "#e74c3c"];
+const body = document.querySelector("body");
 
-const hello = document.querySelector("h2");
+function initialBG() {
+  let width = window.innerWidth;
+  console.log(width);
+  if (width >= 800) {
+    body.className = "yellow";
+  } else if (width < 800 && width >= 400) {
+    body.className = "purple";
+  } else {
+    body.className = "aqua";
+  }
+}
 
-const superEventHandler = {
-  mouseOn: () => {
-    hello.innerText = "Mouse is here";
-    hello.style.color = colors[1];
-  },
-  mouseLeave: () => {
-    hello.innerText = "Mouse is gone";
-    hello.style.color = colors[2];
-  },
-  rClick: () => {
-    hello.innerText = "You just resized";
-    hello.style.color = colors[3];
-  },
-  resize: () => {
-    hello.innerText = "That was a right click";
-    hello.style.color = colors[4];
-  },
-};
+function bgChange() {
+  let width = window.innerWidth;
+  console.log(width);
+  if (width >= 800) {
+    body.classList.remove("purple");
+    body.classList.add("yellow");
+    console.log("a");
+  } else if (width >= 400 && width < 800) {
+    body.classList.remove("aqua", "yellow");
+    body.classList.add("purple");
+    console.log("b");
+  } else {
+    body.classList.remove("purple");
+    body.classList.add("aqua");
+    console.log("c");
+  }
+}
 
-hello.addEventListener("mouseenter", mouseOn);
-hello.addEventListener("mouseleave", mouseLeave);
-window.addEventListener("contextmenu", rClick);
-window.addEventListener("resize", resize);
+window.addEventListener("load", initialBG);
+window.addEventListener("resize", bgChange);
