@@ -1,11 +1,8 @@
-.purple {
-  background-color: blueviolet;
+.bold {
+  font-size: large;
+  font-weight: 500;
 }
 
-.yellow {
-  background-color: yellow;
-}
-
-.aqua {
-  background-color: aqua;
+.unseen {
+  display: none;
 }

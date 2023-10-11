@@ -1,34 +1,33 @@
-const body = document.querySelector("body");
+const formNums = document.querySelector(".game");
+const limNum = formNums.querySelector(".limnum");
+const pNum = formNums.querySelector(".pnum");
+const rexultBox = document.querySelector("div");
+const result = rexultBox.querySelector("h3");
+const winner = rexultBox.querySelector("span");
+const again = rexultBox.querySelector("button");
 
-function initialBG() {
-  let width = window.innerWidth;
-  console.log(width);
-  if (width >= 800) {
-    body.className = "yellow";
-  } else if (width < 800 && width >= 400) {
-    body.className = "purple";
+function reset() {
+  location.reload();
+}
+
+function gamestart(event) {
+  event.preventDefault();
+  const limit = parseInt(limNum.value);
+  const player = parseInt(pNum.value);
+  const ranNum = parseInt(Math.ceil(Math.random() * limit));
+  console.log(limit);
+  console.log(player);
+  console.log(ranNum);
+  rexultBox.classList.remove("unseen");
+  result.innerText = `You chose: ${player}, the machine chose: ${ranNum}`;
+  if (player === ranNum) {
+    winner.innerText = "";
+    winner.innerText = "You win!!!";
+    again.classList.remove("unseen");
+    again.addEventListener("click", reset);
   } else {
-    body.className = "aqua";
+    winner.innerText = "You lose";
   }
 }
 
-function bgChange() {
-  let width = window.innerWidth;
-  console.log(width);
-  if (width >= 800) {
-    body.classList.remove("purple");
-    body.classList.add("yellow");
-    console.log("a");
-  } else if (width >= 400 && width < 800) {
-    body.classList.remove("aqua", "yellow");
-    body.classList.add("purple");
-    console.log("b");
-  } else {
-    body.classList.remove("purple");
-    body.classList.add("aqua");
-    console.log("c");
-  }
-}
-
-window.addEventListener("load", initialBG);
-window.addEventListener("resize", bgChange);
+formNums.addEventListener("submit", gamestart);
