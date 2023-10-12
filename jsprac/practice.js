@@ -1,33 +1,19 @@
-const formNums = document.querySelector(".game");
-const limNum = formNums.querySelector(".limnum");
-const pNum = formNums.querySelector(".pnum");
-const rexultBox = document.querySelector("div");
-const result = rexultBox.querySelector("h3");
-const winner = rexultBox.querySelector("span");
-const again = rexultBox.querySelector("button");
+const dcal = document.querySelector("h2#clock");
+const christmasEve = new Date("2023-12-24 00:00:00");
 
-function reset() {
-  location.reload();
+function xMasDDay() {
+  const today = new Date();
+  const dDay = christmasEve - today;
+  const perDay = 1000 * 60 * 60 * 24;
+  const perHour = 1000 * 60 * 60;
+  const perMinute = 1000 * 60;
+  const gapDate = Math.floor(dDay / perDay);
+  const dHour = dDay - perDay * gapDate;
+  const gapHour = Math.floor(dHour / perHour);
+  const dMinute = dHour - perHour * gapHour;
+  const gapMinute = Math.floor(dMinute / perMinute);
+  const gapSecond = Math.floor((dMinute - perMinute * gapMinute) / 1000);
+  dcal.innerText = `${gapDate}d ${gapHour}h ${gapMinute}m ${gapSecond}s`;
 }
 
-function gamestart(event) {
-  event.preventDefault();
-  const limit = parseInt(limNum.value);
-  const player = parseInt(pNum.value);
-  const ranNum = parseInt(Math.ceil(Math.random() * limit));
-  console.log(limit);
-  console.log(player);
-  console.log(ranNum);
-  rexultBox.classList.remove("unseen");
-  result.innerText = `You chose: ${player}, the machine chose: ${ranNum}`;
-  if (player === ranNum) {
-    winner.innerText = "";
-    winner.innerText = "You win!!!";
-    again.classList.remove("unseen");
-    again.addEventListener("click", reset);
-  } else {
-    winner.innerText = "You lose";
-  }
-}
-
-formNums.addEventListener("submit", gamestart);
+setInterval(xMasDDay, 1000);
